@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body>
+    <h2>Register</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <label for="userid">User ID</label>
+        {{ form.userid() }}
+        <label for="displayname">Display Name</label>
+        {{ form.displayname() }}
+        <label for="password">Password</label>
+        {{ form.password() }}
+        <input type="submit" value="{% if registration %}Register{% else %}Login{% endif %}">
+    </form>
+
+    <h2> {{reg_status}}</h2>
+
+    
+</body>
+</html>

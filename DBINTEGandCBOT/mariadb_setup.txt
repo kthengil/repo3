@@ -1,0 +1,41 @@
+yum update
+yum install mariadb-server
+yum install mysql-connector-c-devel  // yum install mariadb-devel //install mariadb-devel --enablerepo=devel
+systemctl start mariadb
+systemctl enable mariadb
+mysql_secure_installation
+
+........................................................................
+
+Creating a user and assigning
+mysql -u root -p
+CREATE DATABASE DBname>;
+CREATE USER '<username>'@'localhost' IDENTIFIED BY '<password>';
+GRANT ALL PRIVILEGES ON <DBname>.* TO '<username>'@'localhost';
+FLUSH PRIVILEGES;
+exit
+
+---------   ---------------    ----------------    ---------------
+pip install mysqlclient
+pip install python-decouple
+
+export SQLALCHEMY_DATABASE_URI='mysql://your_database_user:your_user_password@localhost/your_database_name'
+
+___ ---- ____ ----___ ---- ____ ----___ ---- ____ ----
+from decouple import config
+
+db_uri = config('SQLALCHEMY_DATABASE_URI')
+secret_key = config('SECRET_KEY')
+
+app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
+
+___ ---- ____ ----___ ---- ____ ----___ ---- ____ ----
+For Checking
+USE <DB_NMAE>;
+SHOW TABLE;
+--> Then sql queries
+
+
+
+
+

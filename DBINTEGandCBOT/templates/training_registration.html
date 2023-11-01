@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Training Registration</title>
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+
+</head>
+<body>
+    <h1>Training Registration</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.name.label }}
+        {{ form.name() }}
+        {{ form.email.label }}
+        {{ form.email() }}
+        {{ form.preferred_timing.label }}
+        {{ form.preferred_timing() }}
+        {{ form.submit.label }}
+        {{ form.submit() }}
+
+    </form>
+    <hr>
+    <h1>Users Registered for Training122</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Preferred Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in registered_users %}
+            <tr>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.preferred_timing }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,64 @@
+To create a custom action with Rasa chatbot that asks the user for a server name, passes it to an API, and responds with the result, you can follow these steps:
+
+1. Define a Custom Action:
+   First, define a custom action in your Rasa chatbot. Create a Python script for your custom action, for example, `actions.py`, and define the action there. Here's an example of how to create such an action:
+
+```python
+from rasa_sdk import Action, Tracker
+from rasa_sdk.executor import CollectingDispatcher
+
+class ActionServerInfo(Action):
+    def name(self):
+        return "action_server_info"
+
+    def run(self, dispatcher, tracker, domain):
+        # Ask the user for the server name
+        dispatcher.utter_message("Please provide the server name.")
+        return []
+```
+
+2. Configure Your Domain:
+   In your Rasa chatbot's domain file (usually `domain.yml`), define the custom action you created:
+
+```yaml
+actions:
+  - action_server_info
+```
+
+3. Define the API Interaction:
+   Modify your custom action to call an API with the provided server name and get the result. You can use the `requests` library to make the API call. Update the `actions.py` file as follows:
+
+```python
+import requests
+from rasa_sdk import Action, Tracker
+from rasa_sdk.executor import CollectingDispatcher
+
+class ActionServerInfo(Action):
+    def name(self):
+        return "action_server_info"
+
+    def run(self, dispatcher, tracker, domain):
+        server_name = tracker.latest_message['text']
+
+        # Make an API call with the server name (replace with your API endpoint)
+        api_url = f"https://your-api-endpoint.com/server-info/{server_name}"
+        response = requests.get(api_url)
+
+        if response.status_code == 200:
+            result = response.json().get('result', "No information available.")
+        else:
+            result = "Failed to retrieve information."
+
+        # Reply with the API result
+        dispatcher.utter_message(f"Server Information: {result}")
+
+        return []
+```
+
+4. Train Your Chatbot:
+   After defining the custom action and configuring the domain, train your chatbot using the `rasa train` command.
+
+5. Test Your Chatbot:
+   Start your Rasa chatbot and interact with it. When you type "console," the bot should ask for the server name. After you provide the server name, the bot will make an API call, get the result, and respond with the information.
+
+This custom action, `action_server_info`, asks for the server name, passes it to the API, and replies with the API's result. Make sure to replace `"https://your-api-endpoint.com/server-info/"` with the actual API endpoint that you want to use.

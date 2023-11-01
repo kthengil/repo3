@@ -1,0 +1,15 @@
+<link rel="stylesheet" type="text/css" href="static/styles.css">
+
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.name.label }}
+    {{ form.name() }}
+    {{ form.email.label }}
+    {{ form.email() }}
+    {{ form.message.label }}
+    {{ form.message() }}
+    {{ form.submit() }}
+</form>
+
+{{feedbackstatus}}
