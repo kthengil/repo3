@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block main %}
+
+<center>
+    <h1>Submit Command</h1>
+    </center>
+    <div class="contentarea">
+        <form class="submitform" action="{{ url_for('submit') }}" method="post">
+
+        {{ submit_form.hidden_tag() }}
+        <label for="{{ submit_form.category.id }}">Category:</label>
+        {{ submit_form.category(class="form-control", placeholder="Enter category") }}
+        
+        <label for="{{ submit_form.scenario.id }}">Scenario:</label>
+        {{ submit_form.scenario(class="form-control", placeholder="Enter scenario") }}
+        
+        <label for="{{ submit_form.command.id }}">Command:</label>
+        {{ submit_form.command(class="form-control", placeholder="Enter command") }}
+        
+        <label for="{{ submit_form.description.id }}">Description:</label>
+        {{ submit_form.description(class="form-control", placeholder="Enter description") }}
+        
+        <label for="{{ submit_form.contributor.id }}">Contributor:</label>
+        {{ submit_form.contributor(class="form-control", placeholder="Enter Contributor") }}
+        
+        {{ submit_form.submit(class="btn ") }}
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block main %}
+<div class="Scenarioview">
+    <h1>{{ cmd['Scenario'] }}</h1>
+    <p>Category: {{ cmd['Category'] }}</p>
+    <p style='font-weight:bold;'>
+        {{ cmd['Command'] }}</p>
+    <p>Description: {{ cmd['Description'] }}</p>
+    <p>Contributor: {{ cmd['Contributor'] }}</p>
+</div>
+
+
+    {% endblock %}

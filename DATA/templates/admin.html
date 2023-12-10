@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block main %}
+    <h1>Admin Page</h1>
+
+    <h2>Published Commands:</h2>
+    <ul>
+        {% for cmd in published_commands %}
+            <li>
+                <strong>Serial No:</strong> {{ cmd['SerialNo'] }}<br>
+                <strong>Category:</strong> {{ cmd['Category'] }}<br>
+                <strong>Scenario:</strong> {{ cmd['Scenario'] }}<br>
+                <strong>Command:</strong> {{ cmd['Command'] }}<br>
+                <strong>Description:</strong> {{ cmd['Description'] }}<br>
+                <a href="{{ url_for('reject', serial_number=loop.index) }}">Remove</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Pending Approval Commands:</h2>
+<ul>
+    {% for cmd in pending_approval_commands %}
+        <li>
+            <strong>SerialNo:</strong> {{ cmd['SerialNo'] }}<br>
+            <strong>Category:</strong> {{ cmd['Category'] }}<br>
+            <strong>Scenario:</strong> {{ cmd['Scenario'] }}<br>
+            <strong>Command:</strong> {{ cmd['Command'] }}<br>
+            <strong>Description:</strong> {{ cmd['Description'] }}<br>
+            <a href="{{ url_for('approve', serial_number=cmd['SerialNo']) }}">Approve</a>
+            <a href="{{ url_for('reject', serial_number=cmd['SerialNo']) }}">Reject</a>
+        </li>
+    {% endfor %}
+</ul>
+
+    <a href="{{ url_for('index') }}">Home</a>
+
+    
+{% endblock %}

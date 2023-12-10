@@ -1,0 +1,114 @@
+
+body{
+    color:#036;
+    background: linear-gradient(rgb(182, 236, 218),rgb(136, 184, 230));
+    height: 100vh;  
+}
+
+
+#search_query{
+    border: solid 2px #70a;
+    width:300px;
+    height:40px;
+    border-radius:50px;
+    font-size:1.1rem;
+    padding:10px;
+}
+
+.homebtn{
+    position:absolute;
+    right:10px;
+    top:10px;
+    height:48px;
+}
+
+.btn-primary{
+    font-size: 2rem;
+    border-radius: 50%;
+}
+
+.btn-primary {
+    position: ;
+    right: 0;
+  }
+
+a {
+    text-decoration: none;
+}
+
+.Scenarioview p{
+    font-size: 1.2rem;
+}
+
+.submitform label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+.Scenarioview h1{
+    font-size: 2rem;
+}
+
+.resultarea a{
+    background: linear-gradient(45deg, #305,#709);
+    color:#fff;
+    padding:2px;
+
+}
+
+resultline{
+    display: inline-flex;
+}
+
+.btn{
+    background: linear-gradient(45deg, #305,#709);
+    color:#fff;
+    padding:10px;
+    border-radius:50px;
+}
+
+.btn:hover {
+    background: linear-gradient(120deg,#307,#70a);
+    border: solid 2px #70a;
+}
+
+a:hover {
+    background: linear-gradient(120deg,#307,#70a);
+    border: solid 2px #70a;
+}
+ul li{
+    display: block;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+.contentarea {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.resultarea {
+    display: block;
+    justify-content: center;
+}
+
+
+.pagetitle {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background:#0cc;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    padding:5px;
+}
+.pagetitle img{
+    height:64px;
+    vertical-align: middle; 
+
+}
+
+.pagetitle h1{
+    font-size: 64px;
+    display: inline-block;
+    vertical-align: middle; 
+}

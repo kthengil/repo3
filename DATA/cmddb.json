@@ -1,0 +1,47 @@
+[
+  {
+    "SerialNo": 1,
+    "Category": "VxVM",
+    "Scenario": "Resize a LUN\t",
+    "Command": "vxdisk -g <group> resize <disk> length=<size>G",
+    "Description": "<group> is the diskgroup name .  <disk>  is used to mention specific disk that is to be used . length is the size to which teh fs need to be resized",
+    "Contributor": "NameofContributor",
+    "published": true
+  },
+  {
+    "SerialNo": 2,
+    "Category": "VxVM",
+    "Scenario": "Create a disk group\t",
+    "Command": "vxdg init <group> <disk>=<device>",
+    "Description": "<group> is the disk group name.<disk> is the disk label to be used.<device> is the actual disk name",
+    "Contributor": "NameofContributor",
+    "published": true
+  },
+  {
+    "SerialNo": 3,
+    "Category": "Linux OS",
+    "Scenario": "Find top 10 memory consuming process.",
+    "Command": "ps aux --sort=-%mem | head -11",
+    "Description": "The command will sort the ps output with memory and with head we can get the top n lines ",
+    "Contributor": "K",
+    "published": true
+  },
+  {
+    "SerialNo": 4,
+    "Category": "Linux OS",
+    "Scenario": "Find top 10 CPU  consuming process.",
+    "Command": "ps aux --sort=-%cpu | head -11",
+    "Description": "The command will sort the ps output with cpu usage and with head we can get the top n lines ",
+    "Contributor": "K",
+    "published": true
+  },
+  {
+    "SerialNo": 5,
+    "Category": "Linux OS",
+    "Scenario": "Find files modified 'n' days before",
+    "Command": "find <path> -mtime +<n> -type f",
+    "Description": "<path> is the path to find <n> is the number of days sine last modified.",
+    "Contributor": "K",
+    "published": true
+  }
+]
